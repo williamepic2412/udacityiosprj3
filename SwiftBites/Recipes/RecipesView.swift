@@ -8,6 +8,12 @@ struct RecipesView: View {
     @Query var recipes: [Recipe]
 
     // MARK: - Body
+    
+    init() {
+        self._recipes = Query(filter: #Predicate<Recipe> {
+            ($0.name.localizedStandardContains(query) || $0.summary.localizedStandardContains(query) || query.isEmpty)
+        })
+    }
 
     var body: some View {
         NavigationStack {
@@ -61,13 +67,7 @@ struct RecipesView: View {
         if recipes.isEmpty {
             empty
         } else {
-            list(for: recipes.filter {
-                if query.isEmpty {
-                    return true
-                } else {
-                    return $0.name.localizedStandardContains(query) || $0.summary.localizedStandardContains(query)
-                }
-            }.sorted(using: sortOrder))
+            list(for: recipes.sorted(using: sortOrder))
         }
     }
 

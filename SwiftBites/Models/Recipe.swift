@@ -11,7 +11,7 @@ import SwiftData
 @Model
 final class Recipe: Identifiable, Hashable {
     let id: UUID
-    var name: String
+    @Attribute(.unique) var name: String
     var summary: String
     var category: CategoryModel?
     var serving: Int

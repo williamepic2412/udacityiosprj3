@@ -13,6 +13,12 @@ struct CategoriesView: View {
     @State private var query = ""
 
   // MARK: - Body
+    
+    init() {
+        self._categories = Query(filter: #Predicate<CategoryModel> {
+            ($0.name.localizedStandardContains(query) || query.isEmpty)
+        })
+    }
 
     var body: some View {
         NavigationStack {
@@ -21,7 +27,7 @@ struct CategoriesView: View {
                 .toolbar {
                     if !categories.isEmpty {
                         NavigationLink(value: CategoryForm.Mode.add) {
-                          Label("Add", systemImage: "plus")
+                            Label("Add", systemImage: "plus")
                         }
                     }
                 }
@@ -41,37 +47,31 @@ struct CategoriesView: View {
         if categories.isEmpty {
             empty
         } else {
-            list(for: categories.filter {
-                if query.isEmpty {
-                    return true
-                } else {
-                    return $0.name.localizedStandardContains(query)
-                }
-            })
+            list(for: categories)
         }
     }
 
     private var empty: some View {
         ContentUnavailableView(
-          label: {
-              Label("No Categories", systemImage: "list.clipboard")
-          },
-          description: {
-              Text("Categories you add will appear here.")
-          },
-          actions: {
-              NavigationLink("Add Category", value: CategoryForm.Mode.add)
-                .buttonBorderShape(.roundedRectangle)
-                .buttonStyle(.borderedProminent)
-          }
+            label: {
+                Label("No Categories", systemImage: "list.clipboard")
+            },
+            description: {
+                Text("Categories you add will appear here.")
+            },
+            actions: {
+                NavigationLink("Add Category", value: CategoryForm.Mode.add)
+                    .buttonBorderShape(.roundedRectangle)
+                    .buttonStyle(.borderedProminent)
+            }
         )
     }
 
     private var noResults: some View {
         ContentUnavailableView(
-          label: {
-            Text("Couldn't find \"\(query)\"")
-          }
+            label: {
+              Text("Couldn't find \"\(query)\"")
+            }
         )
     }
 

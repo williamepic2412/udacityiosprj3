@@ -8,6 +8,9 @@ struct IngredientsView: View {
 
     init(selection: Selection? = nil) {
         self.selection = selection
+        self._ingredients = Query(filter: #Predicate<Ingredient> {
+            ($0.name.localizedStandardContains(query) || query.isEmpty)
+        })
     }
 
     @Environment(\.modelContext) private var context
@@ -41,13 +44,7 @@ struct IngredientsView: View {
         if ingredients.isEmpty {
             empty
         } else {
-            list(for: ingredients.filter {
-                if query.isEmpty {
-                    return true
-                } else {
-                    return $0.name.localizedStandardContains(query)
-                }
-            })
+            list(for: ingredients)
         }
     }
 

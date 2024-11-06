@@ -11,7 +11,7 @@ import SwiftData
 @Model
 final class Ingredient: Identifiable, Hashable {
     let id: UUID
-    var name: String
+    @Attribute(.unique) var name: String
 
     init(id: UUID = UUID(), name: String = "") {
         self.id = id

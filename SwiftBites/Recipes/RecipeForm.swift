@@ -5,8 +5,8 @@ import SwiftData
 
 struct RecipeForm: View {
     enum Mode: Hashable {
-      case add
-      case edit(Recipe)
+        case add
+        case edit(Recipe)
     }
 
     var mode: Mode
@@ -42,7 +42,7 @@ struct RecipeForm: View {
     @State private var serving: Int
     @State private var time: Int
     @State private var instructions: String
-    @State private var categoryId: CategoryModel.ID?
+    @State private var categoryId: UUID?
     @State private var ingredients: [RecipeIngredient]
     @State private var imageItem: PhotosPickerItem?
     @State private var imageData: Data?
@@ -51,7 +51,6 @@ struct RecipeForm: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     @Query var categories: [CategoryModel]
-    @Query var recipes: [Recipe]
 
     // MARK: - Body
 
@@ -262,6 +261,7 @@ struct RecipeForm: View {
             fatalError("Delete unavailable in add mode")
         }
         context.delete(recipe)
+        ingredients = []
         dismiss()
     }
 
@@ -276,18 +276,17 @@ struct RecipeForm: View {
 
         switch mode {
         case .add:
-            context.insert(
-                Recipe(
-                    name: name,
-                    summary: summary,
-                    category: category,
-                    serving: serving,
-                    time: time,
-                    ingredients: ingredients,
-                    instructions: instructions,
-                    imageData: imageData
-                )
+            let recipe = Recipe(
+                name: name,
+                summary: summary,
+                category: category,
+                serving: serving,
+                time: time,
+                instructions: instructions,
+                imageData: imageData
             )
+            recipe.ingredients = ingredients
+            context.insert(recipe)
         case .edit(let recipe):
             recipe.name = name
             recipe.summary = summary

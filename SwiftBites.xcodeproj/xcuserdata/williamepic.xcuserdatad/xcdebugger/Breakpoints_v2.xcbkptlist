@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F2B60B65-6D20-49A8-B8C9-18B2B23BB97A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F9E0B68A-4C2C-4411-BE62-FB683D77308E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftBites/Models/RecipeIngredent.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "RecipeIngredient"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "F9E0B68A-4C2C-4411-BE62-FB683D77308E - 8f625803972e7522"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of SwiftBites.RecipeIngredient.init(id: Foundation.UUID, ingredient: SwiftBites.Ingredient, quantity: Swift.String) -&gt; SwiftBites.RecipeIngredient"
+                  moduleName = "SwiftBites"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/williamepic/Desktop/Udacity/SUBMIT/project3/SwiftBites/SwiftBites/Models/RecipeIngredent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18">
+               </Location>
+               <Location
+                  uuid = "F9E0B68A-4C2C-4411-BE62-FB683D77308E - ce15b509c6014745"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of SwiftBites.RecipeIngredient.init(id: Foundation.UUID, ingredient: SwiftBites.Ingredient, quantity: Swift.String) -&gt; SwiftBites.RecipeIngredient"
+                  moduleName = "SwiftBites"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/williamepic/Desktop/Udacity/SUBMIT/project3/SwiftBites/SwiftBites/Models/RecipeIngredent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18">
+               </Location>
+               <Location
+                  uuid = "F9E0B68A-4C2C-4411-BE62-FB683D77308E - 9192e17e9e44964"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 2 of SwiftBites.RecipeIngredient.init(id: Foundation.UUID, ingredient: SwiftBites.Ingredient, quantity: Swift.String) -&gt; SwiftBites.RecipeIngredient"
+                  moduleName = "SwiftBites"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/williamepic/Desktop/Udacity/SUBMIT/project3/SwiftBites/SwiftBites/Models/RecipeIngredent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18">
+               </Location>
+               <Location
+                  uuid = "F9E0B68A-4C2C-4411-BE62-FB683D77308E - e746b4ddf4dd2589"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftBites.RecipeIngredient.__allocating_init(id: Foundation.UUID, ingredient: SwiftBites.Ingredient, quantity: Swift.String) -&gt; SwiftBites.RecipeIngredient"
+                  moduleName = "SwiftBites"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/williamepic/Desktop/Udacity/SUBMIT/project3/SwiftBites/SwiftBites/Models/RecipeIngredent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "F9E0B68A-4C2C-4411-BE62-FB683D77308E - 7519eb45a5f7be2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftBites.RecipeIngredient.init(id: Foundation.UUID, ingredient: SwiftBites.Ingredient, quantity: Swift.String) -&gt; SwiftBites.RecipeIngredient"
+                  moduleName = "SwiftBites"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/xp/55567z193gj17sf6x2wc5l380000gn/T/swift-generated-sources/@__swiftmacro_10SwiftBites16RecipeIngredient5ModelfMm_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2"
+                  endingLineNumber = "2">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

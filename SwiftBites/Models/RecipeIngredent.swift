@@ -11,14 +11,9 @@ import SwiftData
 @Model
 final class RecipeIngredient: Identifiable, Hashable {
     let id: UUID
-    
     @Relationship(deleteRule: .nullify)
     var ingredient: Ingredient
-
     var quantity: String
-    
-    @Relationship(deleteRule: .cascade, inverse: \Recipe.ingredients)
-    var recipe: Recipe?
 
     init(id: UUID = UUID(), ingredient: Ingredient = Ingredient(), quantity: String = "") {
         self.id = id

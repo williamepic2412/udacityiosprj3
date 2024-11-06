@@ -87,13 +87,13 @@
 		07A2073A2AFAF5100048B7EA /* SwiftBites */ = {
 			isa = PBXGroup;
 			children = (
-				1B0B8EAC2CDB7E49000B9AB1 /* Models */,
 				07A2073B2AFAF5100048B7EA /* App.swift */,
 				07A2073D2AFAF5100048B7EA /* Main.swift */,
 				07CF2F322B0A1D4C003B83AD /* Utils.swift */,
 				0719D4252B058E1800B1A4E3 /* Categories */,
 				07B772002AFC1D2E007BF4B0 /* Ingredients */,
 				07B771FF2AFC1D22007BF4B0 /* Recipes */,
+				1B0B8EAC2CDB7E49000B9AB1 /* Models */,
 				07A207412AFAF5100048B7EA /* Assets.xcassets */,
 				07A207432AFAF5100048B7EA /* Preview Content */,
 			);
