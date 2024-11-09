@@ -9,10 +9,21 @@ struct RecipesView: View {
 
     // MARK: - Body
     
-    init() {
-        self._recipes = Query(filter: #Predicate<Recipe> {
-            ($0.name.localizedStandardContains(query) || $0.summary.localizedStandardContains(query) || query.isEmpty)
-        })
+    private var filteredRecipes: [Recipe] {
+        let predicate = #Predicate<Recipe> {
+            $0.name.localizedStandardContains(query) || $0.summary.localizedStandardContains(query)
+        }
+        
+        let descriptor = FetchDescriptor<Recipe>(
+            predicate: query.isEmpty ? nil : predicate
+        )
+        
+        do {
+            let filteredRecipes = try context.fetch(descriptor)
+            return filteredRecipes
+        } catch {
+            return []
+        }
     }
 
     var body: some View {
@@ -67,7 +78,7 @@ struct RecipesView: View {
         if recipes.isEmpty {
             empty
         } else {
-            list(for: recipes.sorted(using: sortOrder))
+            list(for: filteredRecipes.sorted(using: sortOrder))
         }
     }
 

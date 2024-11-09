@@ -13,7 +13,7 @@ final class CategoryModel: Identifiable, Hashable {
     let id: UUID
     @Attribute(.unique) var name: String
     
-    @Relationship(deleteRule: .nullify, inverse: \Recipe.category)
+    @Relationship(inverse: \Recipe.category)
     var recipes: [Recipe] = []
 
     init(id: UUID = UUID(), name: String = "", recipes: [Recipe] = []) {

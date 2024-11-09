@@ -13,9 +13,11 @@ final class Recipe: Identifiable, Hashable {
     let id: UUID
     @Attribute(.unique) var name: String
     var summary: String
+    @Relationship(deleteRule: .nullify)
     var category: CategoryModel?
     var serving: Int
     var time: Int
+    @Relationship(deleteRule: .cascade)
     var ingredients: [RecipeIngredient] = []
     var instructions: String
     var imageData: Data?

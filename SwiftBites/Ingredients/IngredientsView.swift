@@ -8,9 +8,6 @@ struct IngredientsView: View {
 
     init(selection: Selection? = nil) {
         self.selection = selection
-        self._ingredients = Query(filter: #Predicate<Ingredient> {
-            ($0.name.localizedStandardContains(query) || query.isEmpty)
-        })
     }
 
     @Environment(\.modelContext) private var context
@@ -19,6 +16,23 @@ struct IngredientsView: View {
     @Query var ingredients: [Ingredient]
 
     // MARK: - Body
+    
+    private var filteredIngredients: [Ingredient] {
+        let predicate = #Predicate<Ingredient> {
+            $0.name.localizedStandardContains(query)
+        }
+        
+        let descriptor = FetchDescriptor<Ingredient>(
+            predicate: query.isEmpty ? nil : predicate
+        )
+        
+        do {
+            let filteredIngredients = try context.fetch(descriptor)
+            return filteredIngredients
+        } catch {
+            return []
+        }
+    }
 
     var body: some View {
         NavigationStack {
@@ -44,7 +58,7 @@ struct IngredientsView: View {
         if ingredients.isEmpty {
             empty
         } else {
-            list(for: ingredients)
+            list(for: filteredIngredients)
         }
     }
 
